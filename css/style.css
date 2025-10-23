@@ -16,13 +16,21 @@ body {
   body {
     padding: 10px 15px;
     font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }
 
 @media screen and (max-width: 480px) {
   body {
     padding: 8px 10px;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 ::selection {
@@ -36,6 +44,7 @@ body {
 textarea {
   left: -1000px;
   position: absolute;
+  font-size: 16px;
 }
 b {
   font-weight: bold;

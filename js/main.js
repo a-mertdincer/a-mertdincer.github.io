@@ -8,6 +8,8 @@ var git = 0;
 var pw = false;
 let pwd = false;
 var commands = [];
+var passwordAttempts = 0;
+var maxPasswordAttempts = 3;
 
 setTimeout(function() {
   loopLines(banner, "", 80);
@@ -37,10 +39,48 @@ textarea.value = "";
 command.innerHTML = textarea.value;
 
 function enterKey(e) {
+  // Ctrl+L - Clear screen but keep banner
+  if (e.ctrlKey && e.keyCode == 76) {
+    e.preventDefault();
+    setTimeout(function() {
+      terminal.innerHTML = '<a id="before"></a>';
+      before = document.getElementById("before");
+      loopLines(banner, "", 80);
+    }, 1);
+    return;
+  }
+
   if (e.keyCode == 181) {
     document.location.reload(true);
   }
+
   if (pw) {
+    // Ctrl+C - Exit password mode
+    if (e.ctrlKey && e.keyCode == 67) {
+      e.preventDefault();
+      addLine("^C", "error", 0);
+      addLine("Password entry cancelled", "error", 100);
+      command.innerHTML = "";
+      textarea.value = "";
+      pw = false;
+      pwd = false;
+      passwordAttempts = 0;
+      liner.classList.remove("password");
+      return;
+    }
+
+    // Handle 'exit' command in password mode
+    if (e.keyCode == 13 && textarea.value.toLowerCase() === "exit") {
+      addLine("Exiting password mode...", "color2", 0);
+      command.innerHTML = "";
+      textarea.value = "";
+      pw = false;
+      pwd = false;
+      passwordAttempts = 0;
+      liner.classList.remove("password");
+      return;
+    }
+
     let et = "*";
     let w = textarea.value.length;
     command.innerHTML = et.repeat(w);
@@ -53,13 +93,25 @@ function enterKey(e) {
       textarea.value = "";
       pwd = false;
       pw = false;
+      passwordAttempts = 0;
       liner.classList.remove("password");
     } else if (e.keyCode == 13) {
-      addLine("Wrong password", "error", 0);
-      command.innerHTML = "";
-      textarea.value = "";
-      pw = false;
-      liner.classList.remove("password");
+      passwordAttempts++;
+      addLine("Wrong password (Attempt " + passwordAttempts + "/" + maxPasswordAttempts + ")", "error", 0);
+
+      if (passwordAttempts >= maxPasswordAttempts) {
+        addLine("Maximum attempts reached. Access denied.", "error", 100);
+        command.innerHTML = "";
+        textarea.value = "";
+        pw = false;
+        pwd = false;
+        passwordAttempts = 0;
+        liner.classList.remove("password");
+      } else {
+        addLine("Try again (or press Ctrl+C to cancel, or type 'exit')", "color2", 100);
+        command.innerHTML = "";
+        textarea.value = "";
+      }
     }
   } else {
     if (e.keyCode == 13) {
