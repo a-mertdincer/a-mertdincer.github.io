@@ -1,13 +1,29 @@
 body {
   margin: 0;
   padding: 15px 20px;
-  min-height: 99%;
+  min-height: 100vh;
   width: 100%;
-  min-width: 550px;
   color: #519975;
   background: #211D1B;
   font-family: cursor, monospace;
   overflow-x: hidden;
+  box-sizing: border-box;
+  cursor: text;
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
 }
 ::selection {
   color: #211830;
@@ -47,6 +63,11 @@ b {
     opacity: 0;
   }
 }
+#terminal {
+  min-height: calc(100vh - 100px);
+  cursor: text;
+}
+
 #command {
   cursor: text;
   height: 50px;
@@ -62,6 +83,12 @@ b {
 #liner::before {
   color: #519975;
   content: "visitor@d0tslash.tech:~$";
+}
+
+@media screen and (max-width: 480px) {
+  #liner::before {
+    content: "visitor:~$";
+  }
 }
 #liner.password::before {
   content: "Password:";
@@ -85,6 +112,20 @@ p {
   letter-spacing: 0.05em;
   animation: typing 0.5s steps(30, end);
 }
+
+@media screen and (max-width: 768px) {
+  p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    animation: none;
+    overflow: visible;
+  }
+
+  p.no-animation {
+    animation: none;
+  }
+}
 .no-animation {
   animation: typing 0 steps(30, end);
 }
@@ -97,6 +138,17 @@ p {
   }
   to {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes typing {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 .index {
@@ -128,4 +180,30 @@ a:hover {
 }
 a:focus {
   outline: 0;
+}
+
+/* Mobile touch improvements */
+@media screen and (max-width: 768px) {
+  a {
+    padding: 2px 4px;
+    display: inline-block;
+  }
+
+  #command {
+    min-height: 40px;
+  }
+
+  .cursor {
+    transform: translateY(3px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .margin {
+    margin-left: 10px;
+  }
+
+  #command {
+    min-height: 35px;
+  }
 }

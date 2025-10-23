@@ -16,6 +16,16 @@ setTimeout(function() {
 
 window.addEventListener("keyup", enterKey);
 
+// Make entire page clickable to focus on textarea
+document.addEventListener("click", function() {
+  textarea.focus();
+});
+
+// Also make terminal area clickable
+terminal.addEventListener("click", function() {
+  textarea.focus();
+});
+
 console.log(
   "%cYou hacked my password!😠",
   "color: #04ff00; font-weight: bold; font-size: 24px;"
@@ -141,6 +151,17 @@ function commander(cmd) {
     case "github":
       addLine("Opening GitHub...", "color2", 0);
       newTab(github);
+      break;
+    case "certificates":
+    case "certs":
+      loopLines(certificates, "color2 margin", 80);
+      break;
+    case "experience":
+    case "exp":
+      loopLines(experience, "color2 margin", 80);
+      break;
+    case "skills":
+      loopLines(skills, "color2 margin", 80);
       break;
     default:
       addLine("<span class=\"inherit\">Command not found. For a list of commands, type <span class=\"command\">'help'</span>.</span>", "error", 100);
