@@ -18,6 +18,18 @@
     <link rel="icon" type="image/x-icon" href="img/fav-icon.png" />
   </head>
   <body>
+    <!-- Mobile keyboard toolbar -->
+    <div id="mobile-keyboard-toolbar" class="mobile-keyboard-toolbar">
+      <button class="kb-key" data-key="Tab">Tab</button>
+      <button class="kb-key" data-key="Escape">Esc</button>
+      <button class="kb-key kb-ctrl" data-key="Control">Ctrl</button>
+      <button class="kb-key" data-key="ArrowUp">↑</button>
+      <button class="kb-key" data-key="ArrowDown">↓</button>
+      <button class="kb-key" data-key="ArrowLeft">←</button>
+      <button class="kb-key" data-key="ArrowRight">→</button>
+      <button class="kb-key" data-special="clear">Clear</button>
+    </div>
+
     <div id="terminal">
       <a id="before"></a>
     </div>
@@ -38,5 +50,6 @@
     <script src="js/caret.js"></script>
     <script src="js/commands.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/mobile-keyboard.js"></script>
   </body>
 </html>
