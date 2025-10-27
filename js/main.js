@@ -28,6 +28,24 @@ terminal.addEventListener("click", function() {
   textarea.focus();
 });
 
+// Mobile keyboard handling - prevent viewport jump
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  // Prevent scroll on focus for mobile
+  textarea.addEventListener('focus', function(e) {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+  });
+
+  // Ensure command input stays visible
+  window.addEventListener('resize', function() {
+    if (document.activeElement === textarea) {
+      setTimeout(function() {
+        textarea.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }, 300);
+    }
+  });
+}
+
 console.log(
   "%cYou hacked my password!😠",
   "color: #04ff00; font-weight: bold; font-size: 24px;"

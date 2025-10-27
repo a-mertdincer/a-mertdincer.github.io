@@ -66,10 +66,32 @@ body::after {
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  html {
+    height: -webkit-fill-available;
   }
 
   input, textarea, select {
     font-size: 16px !important;
+  }
+
+  #terminal {
+    min-height: calc(100vh - 80px);
+    min-height: calc(-webkit-fill-available - 80px);
+    padding-bottom: 20px;
+  }
+
+  #command {
+    position: sticky;
+    bottom: 0;
+    background: #000000;
+    padding: 10px 0;
+    margin: 0 -15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
