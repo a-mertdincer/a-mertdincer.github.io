@@ -111,39 +111,8 @@
     textarea.focus();
   });
 
-  // Show/hide toolbar based on keyboard visibility
-  let lastHeight = window.innerHeight;
-
-  window.addEventListener('resize', function() {
-    const currentHeight = window.innerHeight;
-
-    // Keyboard opened (screen height decreased)
-    if (currentHeight < lastHeight) {
-      toolbar.style.bottom = '0px';
-    }
-    // Keyboard closed (screen height increased)
-    else if (currentHeight > lastHeight) {
-      toolbar.style.bottom = '0px';
-    }
-
-    lastHeight = currentHeight;
-  });
-
-  // Adjust toolbar position when textarea is focused
-  textarea.addEventListener('focus', function() {
-    // Small delay to let keyboard appear
-    setTimeout(() => {
-      // Get keyboard height estimate (rough)
-      const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-      const windowHeight = window.innerHeight;
-      const keyboardHeight = windowHeight - viewportHeight;
-
-      if (keyboardHeight > 100) {
-        // Position toolbar above keyboard
-        toolbar.style.bottom = keyboardHeight + 'px';
-      }
-    }, 300);
-  });
+  // Keep toolbar always at bottom
+  // No dynamic positioning needed - CSS handles it with fixed position
 
   // Reset ctrl state when textarea loses focus
   textarea.addEventListener('blur', function() {
