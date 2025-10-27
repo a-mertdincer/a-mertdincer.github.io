@@ -140,6 +140,12 @@ function enterKey(e) {
       commander(command.innerHTML.toLowerCase());
       command.innerHTML = "";
       textarea.value = "";
+
+      // Scroll to command input after command execution
+      setTimeout(function() {
+        window.scrollTo(0, document.body.offsetHeight);
+        liner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
     }
     if (e.keyCode == 38 && git != 0) {
       git -= 1;
@@ -264,14 +270,10 @@ function addLine(text, style, time) {
     before.parentNode.insertBefore(next, before);
 
     // Scroll to keep command input visible
-    window.scrollTo(0, document.body.offsetHeight);
-
-    // Extra smooth scroll on mobile to command input
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      setTimeout(function() {
-        liner.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
+    setTimeout(function() {
+      window.scrollTo(0, document.body.offsetHeight);
+      liner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 10);
   }, time);
 }
 
@@ -279,4 +281,11 @@ function loopLines(name, style, time) {
   name.forEach(function(item, index) {
     addLine(item, style, index * time);
   });
+
+  // Scroll to bottom after all lines are added
+  const totalTime = name.length * time + 100;
+  setTimeout(function() {
+    window.scrollTo(0, document.body.offsetHeight);
+    liner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, totalTime);
 }
