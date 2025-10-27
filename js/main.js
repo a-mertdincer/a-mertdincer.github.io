@@ -28,20 +28,21 @@ terminal.addEventListener("click", function() {
   textarea.focus();
 });
 
-// Mobile keyboard handling - prevent viewport jump
+// Mobile keyboard handling - scroll to command input
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  // Prevent scroll on focus for mobile
+  // Scroll to command input when focused
   textarea.addEventListener('focus', function(e) {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
+    setTimeout(function() {
+      liner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
   });
 
-  // Ensure command input stays visible
+  // Ensure command input stays visible on keyboard open
   window.addEventListener('resize', function() {
     if (document.activeElement === textarea) {
       setTimeout(function() {
-        textarea.scrollIntoView({ behavior: 'smooth', block: 'end' });
-      }, 300);
+        liner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
     }
   });
 }
@@ -262,7 +263,15 @@ function addLine(text, style, time) {
 
     before.parentNode.insertBefore(next, before);
 
+    // Scroll to keep command input visible
     window.scrollTo(0, document.body.offsetHeight);
+
+    // Extra smooth scroll on mobile to command input
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      setTimeout(function() {
+        liner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
   }, time);
 }
 

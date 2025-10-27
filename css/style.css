@@ -79,19 +79,12 @@ body::after {
   }
 
   #terminal {
-    min-height: calc(100vh - 80px);
-    min-height: calc(-webkit-fill-available - 80px);
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   #command {
-    position: sticky;
-    bottom: 0;
-    background: #000000;
-    padding: 10px 0;
-    margin: 0 -15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    position: relative;
+    margin-bottom: 50vh;
   }
 }
 
