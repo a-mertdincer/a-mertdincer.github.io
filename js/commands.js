@@ -8,16 +8,16 @@ var email = 'mailto:a.mertdincr@gmail.com';
 whois = [
   "<br>",
   "Hey, I'm Mert! 👋",
-  "Cybersecurity Analyst specializing in threat detection, incident response, and SOC operations.",
-  "Currently working at Cyberwise as a Cyber Defence Center Analyst in Istanbul, monitoring real-time",
-  "alerts across IBM QRadar, Microsoft Sentinel, ArcSight, and CrowdStrike Falcon.",
+  "Systems Engineer @ SDT | Cybersecurity Enthusiast",
+  "Combining my cybersecurity background with Systems Engineering discipline.",
+  "Expanding my knowledge in OpenShift, container architectures, and process automation (PowerShell/Python).",
   "<br>",
   "🎓 Computer Engineering graduate from Erciyes University (GPA 3.09)",
   "🔐 Certified: CompTIA Security+, eCIR, eJPT, and more",
-  "🌍 Former Erasmus+ student at Lublin University of Technology, Poland",
+  "🌍 Known for my desire to learn and professional curiosity.",
   "<br>",
-  "I'm passionate about red team tactics, blue team defense, and sharing knowledge through LSociety.net.",
-  "When I'm not hunting threats, you'll find me solving CTF challenges, reverse engineering,",
+  "I'm passionate about system hardening, automation, and defensive security.",
+  "When I'm not configuring systems, you'll find me solving CTF challenges, reverse engineering,",
   "or designing immersive game levels as a hobby.",
   "<br>"
 ];
@@ -45,6 +45,7 @@ secret = [
 projects = [
   "<br>",
   'Our Blog Page           <a href="' + blog + '" target="_blank">LSociety' + '</a>',
+  'System Automation       <span class="color2">Scripts (In Progress)</span>',
   'My Github Repos         <a href="' + github + '" target="_blank">github/a-mertdincer' + "</a>",
   "<br>"
 ];
@@ -74,6 +75,10 @@ certificates = [
   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   "💡 Achievement Progress: 9/9 Certifications Earned! 🎉",
   "<br>",
+  "🔜 <span class='color2'>Next Targets</span>",
+  "   🎯 Red Hat Certified System Administrator (RHCSA)",
+  "   🎯 Red Hat Certified OpenShift Administrator",
+  "<br>",
 ];
 
 experience = [
@@ -82,8 +87,13 @@ experience = [
   "<br>",
   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   "<br>",
+  "⚙️ <span class='color2'>SDT Space & Defence Technologies | Systems Engineer</span>",
+  "   📍 Ankara, Türkiye | Present",
+  "   • Focusing on system administration and automation",
+  "   • Managing containerized environments (OpenShift/Kubernetes)",
+  "<br>",
   "🔴 <span class='color2'>Cyberwise | Cyber Defence Center Analyst</span>",
-  "   📍 Istanbul, Türkiye | Feb 2024 - Present",
+  "   📍 Istanbul, Türkiye | Feb 2024 - Previous",
   "   • Real-time threat monitoring across SIEM platforms (QRadar, Sentinel, ArcSight)",
   "   • Endpoint threat investigation with CrowdStrike Falcon, Vectra EDR, MS Defender",
   "   • Incident response, analysis reporting, and SOC process improvements",
@@ -102,29 +112,21 @@ experience = [
 
 skills = [
   "<br>",
-  "🎮 <span class='command'>SKILL TREE</span> 🎮",
+  "⚙️ <span class='command'>TECH STACK & FOCUS</span> ⚙️",
   "<br>",
   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
   "<br>",
-  "🔴 <span class='color2'>Red Team Arsenal</span> [████████░░] 80%",
-  "   ⚔️  Web: Burp Suite, OWASP ZAP, sqlmap, Nikto",
-  "   📱 Mobile: jadx, MobSF, Frida, Drozer",
-  "   🌐 Network: Nmap, Metasploit, Hydra, Nessus",
+  "🚀 <span class='color2'>Active Tech Stack</span>",
+  "   Python (Scripting), PowerShell, Linux Basics",
   "<br>",
-  "🔵 <span class='color2'>Blue Team Defense</span> [██████████] 100%",
-  "   🛡️  SIEM: IBM QRadar, Microsoft Sentinel, ArcSight",
-  "   🔍 EDR: CrowdStrike Falcon, Vectra, MS Defender",
-  "   📊 Analysis: Log parsing, packet inspection, anomaly detection",
+  "🌱 <span class='color2'>Learning Journey</span>",
+  "   OpenShift, Kubernetes, System Hardening",
   "<br>",
-  "💻 <span class='color2'>Development</span> [███████░░░] 70%",
-  "   🐍 Python (Intermediate) | 🦫 Go (Basic) | 🐚 Bash Scripting",
-  "<br>",
-  "☁️  <span class='color2'>Cloud Platforms</span> [█████░░░░░] 50%",
-  "   ☁️  AWS & Azure Basics | INE Certified Cloud Associate",
+  "🎨 <span class='color2'>Other Interests</span>",
+  "   Web Technologies (HTML/CSS)",
   "<br>",
   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-  "🏅 Overall Security Level: <span class='command'>Analyst Tier 2</span>",
-  "🎯 Next Milestone: OSCP Certification",
+  "🎯 Focusing on: System Automation & Orchestration",
   "<br>",
 ];
 
@@ -173,7 +175,7 @@ banner = [
   "| |              | || |              || ",
   "| '--------------' || '--------------'| ",
   "'----------------'  '----------------'",
-  
+
   '<span class="color2">Welcome to my interactive web terminal.</span>',
   "<span class=\"color2\">For a list of available commands, type</span> <span class=\"command\">'help'</span><span class=\"color2\">.</span>",
 ];
