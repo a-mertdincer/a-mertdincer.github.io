@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ9TR5T9S2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QJ9TR5T9S2');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>CV - Ahmet Mert Dinçer</title>
+    <meta name="description" content="CV of Ahmet Mert Dinçer — Systems Engineer at SDT, working with OKD/KubeVirt, OpenShift, GitLab CI/CD, Prometheus/Grafana/Loki, and full-stack Next.js + Supabase. Background in SOC analysis (QRadar, Sentinel, CrowdStrike)." />
+    <meta name="author" content="Ahmet Mert Dinçer" />
+    <meta property="og:title" content="CV - Ahmet Mert Dinçer" />
+    <meta property="og:description" content="Systems Engineer · DevOps / SRE · Full-Stack (Next.js) · Cybersecurity Engineer." />
+    <meta property="og:type" content="profile" />
+    <link rel="canonical" href="https://a-mertdincer.github.io/cv/" />
+    <link rel="stylesheet" type="text/css" media="screen,print" href="../css/cv.css" />
+    <link rel="icon" type="image/x-icon" href="../img/fav-icon.png" />
+  </head>
+  <body class="cv">
+    <div class="cv-wrap">
+      <header class="cv-topbar">
+        <a class="cv-back" href="../">← back to terminal</a>
+        <h1 class="cv-heading">CV - Ahmet Mert Dinçer</h1>
+        <a class="cv-download" href="../cv-en.pdf" download="ahmet-mert-dincer-cv.pdf">Download PDF</a>
+      </header>
+
+      <object class="cv-pdf" data="../cv-en.pdf" type="application/pdf" aria-label="Embedded CV PDF">
+        <div class="cv-pdf-fallback">
+          <p>Your browser doesn't support embedded PDFs. Please <a href="../cv-en.pdf" download="ahmet-mert-dincer-cv.pdf">download the CV</a> to view it.</p>
+        </div>
+      </object>
+
+      <hr class="cv-divider" />
+      <p class="cv-text-intro">Full text version below — accessible, indexable, and works on any device.</p>
+
+      <main class="cv-body">
+        <h1>Ahmet Mert Dinçer</h1>
+        <p class="cv-contact">
+          Ankara, Türkiye<br />
+          · <a href="mailto:a.mertdincr@gmail.com">a.mertdincr@gmail.com</a> · +90 543 382 38 08<br />
+          · <a href="https://a-mertdincer.github.io" target="_blank" rel="noopener noreferrer">a-mertdincer.github.io</a><br />
+          · <a href="https://github.com/a-mertdincer" target="_blank" rel="noopener noreferrer">github.com/a-mertdincer</a><br />
+          · <a href="https://www.linkedin.com/in/a-mertdincer/" target="_blank" rel="noopener noreferrer">linkedin.com/in/a-mertdincer</a>
+        </p>
+        <p class="cv-target"><strong>Target Roles:</strong> Systems Engineer / Platform Engineer · DevOps / SRE · Cloud &amp; Kubernetes Engineer · Full-Stack Developer (Next.js) · Cybersecurity Engineer</p>
+        <p class="cv-confirm">[CONFIRM: edit this list to match what you actually want recruiters to see]</p>
+
+        <h2>Professional Summary</h2>
+        <p>Systems engineer at SDT with hands-on responsibility for an OKD/KubeVirt production cluster, end-to-end DevOps tooling (GitLab CI/CD, Nexus, SonarQube, ArgoCD, TeamCity, YouTrack), and a full observability stack (Prometheus federation, Grafana, Loki, Alloy, OpenTelemetry Collector). Background as a SOC analyst across IBM QRadar, Microsoft Sentinel, CrowdStrike Falcon, and Vectra EDR. Active full-stack developer (Next.js + Supabase) shipping side projects and freelance work. Comfortable from Linux/CoreOS internals up to TypeScript and from packet captures to React Server Components.</p>
+
+        <h2>Experience</h2>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Systems Engineer — <span class="org">SDT (Savunma Teknolojileri Mühendislik), GKTY / YİİB Team</span></h3>
+            <span class="cv-entry-date">December 2025 – Present</span>
+          </div>
+          <p class="cv-entry-meta">Ankara, Türkiye · On-site · Full-Time</p>
+          <ul>
+            <li>Operate a 3-master OKD cluster with KubeVirt running 22 Xubuntu VMs in a dedicated namespace; bastion + HAProxy front-end and dedicated monitoring host (10.100.3.192).</li>
+            <li>Built and maintain the observability stack: Prometheus federation, Grafana dashboards (<code>gkty-okd-pods</code>, <code>gkty-okd-overview</code>, NOC dashboards), Loki, Alloy DaemonSet, OpenTelemetry Collector with bearer-token auth.</li>
+            <li>Run the DevOps toolchain end-to-end: GitLab CI/CD with non-root OKD runners (kaniko + privilege SCC, Maven settings via ConfigMap/Secret/PVC mounts), Nexus Docker registry connector, SonarQube CA-trust via init container, ArgoCD with KubeVirt CRD exclusions, TeamCity, YouTrack.</li>
+            <li>Identity &amp; RBAC: LDAP identity provider on OAuth, AD domain (<code>gkty.sdt.local</code>) join via SSSD, RBAC/ClusterRoleBindings for ~18 users across 21 namespaces, kubeconfig distribution, group-based xrdp access (<code>tsusers</code>).</li>
+            <li>Networking: OVN pod-network IP pinning via annotations, NetworkAttachmentDefinitions for VM bridges (<code>br-vm-bridge</code>), Netplan/nmcli static IPs with src-pinned routes, NetworkPolicy isolation across env-groups, UFW fleet management scripts that pull IPs dynamically from the cluster.</li>
+            <li>Storage: TopoLVM CSI, CDI StorageProfile fixes, HCO DataVolume troubleshooting, IBM FlashSystem-backed volumes.</li>
+            <li>Resolved a 22-day YouTrack/Hub auth outage: traced to JVM heap exhaustion, set jvmoptions to 4&nbsp;GB, switched to a Recreate deployment strategy, restored base-url consistency.</li>
+            <li>Onboarding automation for new users (kubeconfig + RBAC + xrdp + Nexus pull secrets + CA trust distribution).</li>
+          </ul>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Cyber Defence Center Analyst — <span class="org">Cyberwise</span></h3>
+            <span class="cv-entry-date">Feb 2024 – December 2025</span>
+          </div>
+          <p class="cv-entry-meta">Istanbul, Türkiye · Hybrid · Full-Time</p>
+          <ul>
+            <li>Monitored real-time alerts in IBM QRadar, Microsoft Sentinel, ArcSight, and CrowdStrike Falcon; triaged suspicious activity end-to-end.</li>
+            <li>Investigated endpoint threats and supported incident response with Vectra EDR and Microsoft Defender.</li>
+            <li>Authored incident analysis reports translating technical findings into actionable intelligence for technical and non-technical stakeholders.</li>
+            <li>Prioritized alerts, logs, and security events by impact; identified root causes and contributed to faster response cycles.</li>
+            <li>Proposed and contributed to SOC process improvements that strengthened detection coverage.</li>
+          </ul>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Intern, .NET MVC Developer — <span class="org">Agartha Technology</span></h3>
+            <span class="cv-entry-date">Sep 2022 – Oct 2022</span>
+          </div>
+          <p class="cv-entry-meta">Ankara, Türkiye · On-site · Internship</p>
+          <ul>
+            <li>Built blog and contacts web applications with ASP.NET MVC and Entity Framework.</li>
+            <li>Collaborated on design, testing, and deployment cycles.</li>
+          </ul>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Research Intern, React.js Web Developer — <span class="org">TÜBİTAK STAR Project (Visseria)</span></h3>
+            <span class="cv-entry-date">Dec 2021 – Jun 2022</span>
+          </div>
+          <p class="cv-entry-meta">Kayseri, Türkiye · Internship</p>
+          <ul>
+            <li>Built and maintained front-end components for an AI-powered event photography platform in React.js.</li>
+            <li>Iterated on usability and performance through repeated build–measure–learn cycles.</li>
+          </ul>
+        </section>
+
+        <h2>Selected Projects</h2>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Telos — Life Operating System (PWA)</h3>
+            <span class="cv-entry-date">Personal product · In development</span>
+          </div>
+          <p class="cv-entry-meta">Stack: Next.js (App Router) · TypeScript · Tailwind · next-intl · Supabase (Frankfurt) · PostgreSQL with RLS</p>
+          <p>A "life OS" PWA designed around an anti-doomscroll philosophy — the app gives time back instead of taking it. Bilingual (TR + EN) from day one. Tagline: <em>"Olabileceğin en iyi versiyona yolculuk."</em></p>
+          <p>30+ tables across four schema files cover habits, body metrics, calm/regulation, a challenge system, and community/couple features. Freemium model. v0.1 ships with row-level security; v0.2 layers app-level encryption on top. PWA-first with native iOS/Android planned via the existing Apple Developer account. <span class="cv-confirm">[CONFIRM: omit repo link if you want to keep it private]</span></p>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Multi-Model AI Review MCP Server</h3>
+            <span class="cv-entry-date">Side project · Python (FastMCP)</span>
+          </div>
+          <p>A Model Context Protocol server that fans out a Claude Code plan to seven models in parallel for cross-verification before implementation: GPT, Claude Sonnet, Grok, DeepSeek, Qwen, Kimi, and Gemini. Output is consolidated into a single review surface so disagreements between models are visible to the human reviewer. Used as a local sanity-check layer on top of agentic coding work.</p>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Subtitle Localization Pipeline (TR/EN)</h3>
+            <span class="cv-entry-date">Tooling · Python</span>
+          </div>
+          <p>End-to-end transcription and localization pipeline: ElevenLabs STT → Grok 4 EN polish → Claude Sonnet 4 EN QC → DeepL bridge → Grok 4 TR localization → Claude Sonnet 4 TR QC → SRT + Excel artifacts. Multi-stage banned-term enforcement at four enforcement layers ensures consistent output across long batches.</p>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Acenta — Kısmet Göreme Travel</h3>
+            <span class="cv-entry-date">Freelance · Next.js</span>
+          </div>
+          <p>Localization (13 languages) and a long bug-fix arc (Revize 1–9) covering variant pricing, FAQ rendering, attraction page server-component error handling, tour highlights section, vehicle-based pricing tiers, and Cloudinary environment setup. Workflow: I scope and write Cursor-ready prompts; the in-house developer applies them.</p>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">GKTY Network Topology Diagram</h3>
+            <span class="cv-entry-date">Infrastructure documentation · draw.io</span>
+          </div>
+          <p>Iteratively maintained XML topology covering OKD nodes, KubeVirt VMs, the monitoring stack, the DevOps toolchain, IBM FlashSystem, and network switches/firewalls. Used as a single-source-of-truth diagram across the team.</p>
+        </section>
+
+        <h2>Education</h2>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">BSc, Computer Engineering — <span class="org">Erciyes University</span></h3>
+            <span class="cv-entry-date">Kayseri, Türkiye</span>
+          </div>
+          <ul>
+            <li>GPA 3.09</li>
+            <li>Member, AI / IT &amp; Security Club</li>
+          </ul>
+        </section>
+
+        <section class="cv-entry">
+          <div class="cv-entry-head">
+            <h3 class="cv-entry-title">Computer Science (Erasmus+ Exchange) — <span class="org">Lublin University of Technology</span></h3>
+            <span class="cv-entry-date">Lublin, Poland</span>
+          </div>
+        </section>
+
+        <h2>Certifications</h2>
+        <ul>
+          <li><strong>CompTIA Security+</strong></li>
+          <li><strong>INE — Certified Incident Responder (eCIR)</strong></li>
+          <li><strong>INE — Junior Penetration Tester (eJPT)</strong></li>
+          <li><strong>TryHackMe — Jr Penetration Tester (PT1)</strong></li>
+          <li><strong>INE — Certified Cloud Associate (ICCA)</strong></li>
+          <li><strong>Cisco — CCNA</strong> (Intro to Networks; SRWE; ENOSA)</li>
+          <li><strong>Cisco — CyberOps Associate</strong></li>
+          <li><strong>Cisco — CCNA: Introduction to Cybersecurity</strong></li>
+        </ul>
+
+        <h2>Skills</h2>
+        <div class="cv-skills">
+          <p><strong>Container &amp; Orchestration:</strong> OKD/OpenShift · KubeVirt · Kubernetes · Helm · ArgoCD · kustomize</p>
+          <p><strong>CI/CD &amp; DevOps:</strong> GitLab CI · TeamCity · Argo Workflows · kaniko · Nexus · SonarQube · YouTrack</p>
+          <p><strong>Observability:</strong> Prometheus (federation) · Grafana · Loki · Alloy · OpenTelemetry Collector</p>
+          <p><strong>Identity &amp; Access:</strong> LDAP · SSSD · Active Directory · OpenShift OAuth · RBAC</p>
+          <p><strong>Networking:</strong> OVN · Flannel · Calico · NetworkAttachmentDefinitions · Linux bridges · UFW · HAProxy · Netplan/nmcli</p>
+          <p><strong>Storage:</strong> TopoLVM CSI · CDI/HCO DataVolumes · IBM FlashSystem (basic)</p>
+          <p><strong>Security Platforms:</strong> IBM QRadar · Microsoft Sentinel · CrowdStrike Falcon · Vectra EDR · Microsoft Defender · ArcSight</p>
+          <p><strong>Web App Security:</strong> Burp Suite · OWASP ZAP · sqlmap · Nikto · Postman · WhatWeb · Wappalyzer</p>
+          <p><strong>Mobile App Security:</strong> jadx · MobSF · dex2jar · apktool · Drozer · Frida</p>
+          <p><strong>Network Security:</strong> Nmap · Netcat · Wireshark · Metasploit · Hydra · Nessus</p>
+          <p><strong>Programming:</strong> Python · TypeScript / JavaScript · Bash · Go (basic) · C# (basic)</p>
+          <p><strong>Frontend:</strong> Next.js · React · Tailwind · App Router · next-intl</p>
+          <p><strong>Backend:</strong> Supabase · PostgreSQL (with RLS) · Node.js · ASP.NET MVC · Entity Framework</p>
+          <p><strong>OS:</strong> Linux (RHEL/CoreOS, Ubuntu/Xubuntu) · Windows Server (AD) · macOS</p>
+          <p><strong>Cloud:</strong> AWS (basic) · Azure (basic)</p>
+          <p><strong>Tooling:</strong> Git · GitHub · Docker · VS Code · draw.io</p>
+        </div>
+
+        <h2>Languages</h2>
+        <ul class="cv-langs">
+          <li><strong>Turkish</strong> — Native</li>
+          <li><strong>English</strong> — C1</li>
+        </ul>
+
+        <h2>Interests</h2>
+        <ul>
+          <li>Reverse engineering and cyber puzzles</li>
+          <li>Game development and immersive level design (on hold while shipping Telos)</li>
+          <li>Music production and curated playlists</li>
+          <li>Walking urban landscapes and rebuilding fitness routines</li>
+          <li>Contemporary fiction and cybersecurity literature</li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>

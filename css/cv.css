@@ -1,0 +1,294 @@
+/* CV page — extends the terminal theme tokens from style.css.
+   Same palette/font, but laid out as a long-form readable document
+   (no scanlines, no aggressive glow on body text, more whitespace). */
+
+:root {
+  --bg: #000;
+  --fg: #00ff41;
+  --fg-soft: #DCDCCC;
+  --muted: #B89076;
+  --accent: #73ABAD;
+  --link: #9C8394;
+  --rule: rgba(0, 255, 65, 0.25);
+}
+
+body.cv {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg-soft);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+  cursor: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CRT vignette is kept (subtle), scanlines dropped for readability. */
+body.cv::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cv-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 28px 96px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Top bar: back link + heading + download button */
+.cv-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.cv-back {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 13px;
+}
+.cv-back:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.cv-heading {
+  color: var(--fg);
+  font-size: 22px;
+  margin: 0;
+  font-weight: bold;
+  text-shadow:
+    0 0 5px rgba(0, 255, 65, 0.6),
+    0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.cv-download {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 13px;
+  background: transparent;
+  text-shadow: 0 0 4px rgba(115, 171, 173, 0.6);
+}
+.cv-download:hover {
+  background: var(--accent);
+  color: #000;
+  text-shadow: none;
+}
+
+/* Embedded PDF viewer */
+.cv-pdf {
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  border: 1px solid var(--rule);
+  background: #0a0a0a;
+  margin-bottom: 32px;
+}
+
+.cv-pdf-fallback {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+.cv-pdf-fallback a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Divider between PDF and text body */
+.cv-divider {
+  border: 0;
+  border-top: 1px dashed var(--rule);
+  margin: 32px 0;
+}
+
+.cv-text-intro {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Main typographic CV body */
+.cv-body {
+  color: var(--fg-soft);
+}
+
+.cv-body h1 {
+  color: var(--fg);
+  font-size: 26px;
+  margin: 0 0 6px;
+  text-shadow:
+    0 0 6px rgba(0, 255, 65, 0.5),
+    0 0 12px rgba(0, 255, 65, 0.2);
+}
+
+.cv-contact {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin: 0 0 8px;
+}
+.cv-contact a {
+  color: var(--link);
+}
+.cv-contact a:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.cv-target {
+  color: var(--fg-soft);
+  font-size: 13.5px;
+  margin: 8px 0 0;
+}
+.cv-target strong {
+  color: var(--fg);
+}
+.cv-confirm {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 12.5px;
+  margin: 4px 0 0;
+}
+
+.cv-body h2 {
+  color: var(--fg);
+  font-size: 17px;
+  margin: 40px 0 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cv-body p {
+  margin: 12px 0;
+}
+
+.cv-body ul {
+  padding-left: 22px;
+  margin: 10px 0 0;
+}
+.cv-body li {
+  margin: 6px 0;
+}
+
+.cv-body a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+.cv-body a:hover {
+  background: var(--accent);
+  color: #000;
+  border-bottom-color: var(--accent);
+}
+
+/* Entry header: title on the left, date right-aligned on desktop */
+.cv-entry {
+  margin-top: 22px;
+}
+.cv-entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cv-entry-title {
+  color: var(--fg-soft);
+  font-size: 15px;
+  margin: 0;
+  font-weight: bold;
+}
+.cv-entry-title .org {
+  color: var(--accent);
+  font-weight: normal;
+}
+.cv-entry-date {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
+}
+.cv-entry-meta {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 13px;
+  margin: 2px 0 8px;
+}
+
+/* Skills / Languages / Interests — denser blocks */
+.cv-skills p,
+.cv-langs p {
+  margin: 6px 0;
+}
+.cv-skills strong {
+  color: var(--accent);
+  font-weight: bold;
+}
+.cv-langs strong {
+  color: var(--accent);
+}
+
+/* Mobile: stack date above title, tighter spacing */
+@media screen and (max-width: 640px) {
+  .cv-wrap {
+    padding: 18px 14px 80px;
+  }
+  .cv-heading {
+    font-size: 18px;
+  }
+  .cv-pdf {
+    height: 60vh;
+    min-height: 360px;
+  }
+  .cv-entry-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .cv-entry-date {
+    order: -1;
+    font-size: 12px;
+    text-align: left;
+  }
+  .cv-body h1 {
+    font-size: 22px;
+  }
+  .cv-body h2 {
+    font-size: 15px;
+  }
+}
+
+@media print {
+  body.cv::before { display: none; }
+  .cv-topbar, .cv-pdf, .cv-pdf-fallback, .cv-divider, .cv-text-intro {
+    display: none;
+  }
+  body.cv {
+    color: #000;
+    background: #fff;
+  }
+  .cv-body, .cv-body h1, .cv-body h2, .cv-entry-title {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+  .cv-body a { color: #000; border-bottom: none; }
+  .cv-body h2 { border-bottom-color: #000; }
+}
