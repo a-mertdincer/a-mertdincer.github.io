@@ -36,11 +36,11 @@
           "date": "December 2025 – Present",
           "meta": "Ankara, Türkiye · On-site · Full-Time",
           "bullets": [
-            "Operate a 3-master OKD cluster with KubeVirt running 22 Xubuntu VMs in a dedicated namespace; bastion + HAProxy front-end and dedicated monitoring host (10.100.3.192).",
-            "Built and maintain the observability stack: Prometheus federation, Grafana dashboards (`gkty-okd-pods`, `gkty-okd-overview`, NOC dashboards), Loki, Alloy DaemonSet, OpenTelemetry Collector with bearer-token auth.",
+            "Operate a 3-master OKD cluster with KubeVirt running 22 Xubuntu VMs in a dedicated namespace; bastion + HAProxy front-end and dedicated monitoring host.",
+            "Built and maintain the observability stack: Prometheus federation, Grafana dashboards (pod, cluster overview, and NOC dashboards), Loki, Alloy DaemonSet, OpenTelemetry Collector with bearer-token auth.",
             "Run the DevOps toolchain end-to-end: GitLab CI/CD with non-root OKD runners (kaniko + privilege SCC, Maven settings via ConfigMap/Secret/PVC mounts), Nexus Docker registry connector, SonarQube CA-trust via init container, ArgoCD with KubeVirt CRD exclusions, TeamCity, YouTrack.",
-            "Identity & RBAC: LDAP identity provider on OAuth, AD domain (`gkty.sdt.local`) join via SSSD, RBAC/ClusterRoleBindings for ~18 users across 21 namespaces, kubeconfig distribution, group-based xrdp access (`tsusers`).",
-            "Networking: OVN pod-network IP pinning via annotations, NetworkAttachmentDefinitions for VM bridges (`br-vm-bridge`), Netplan/nmcli static IPs with src-pinned routes, NetworkPolicy isolation across env-groups, UFW fleet management scripts that pull IPs dynamically from the cluster.",
+            "Identity & RBAC: LDAP identity provider on OAuth, AD domain join via SSSD, RBAC/ClusterRoleBindings for ~18 users across 21 namespaces, kubeconfig distribution, group-based xrdp access.",
+            "Networking: OVN pod-network IP pinning via annotations, NetworkAttachmentDefinitions for VM bridges, Netplan/nmcli static IPs with src-pinned routes, NetworkPolicy isolation across env-groups, UFW fleet management scripts that pull IPs dynamically from the cluster.",
             "Storage: TopoLVM CSI, CDI StorageProfile fixes, HCO DataVolume troubleshooting, IBM FlashSystem-backed volumes.",
             "Resolved a 22-day YouTrack/Hub auth outage: traced to JVM heap exhaustion, set jvmoptions to 4 GB, switched to a Recreate deployment strategy, restored base-url consistency.",
             "Onboarding automation for new users (kubeconfig + RBAC + xrdp + Nexus pull secrets + CA trust distribution)."
@@ -154,7 +154,7 @@
       "title": "Interests",
       "items": [
         "Reverse engineering and cyber puzzles",
-        "Game development and immersive level design (on hold while shipping Telos)",
+        "Game development and immersive level design",
         "Music production and curated playlists",
         "Walking urban landscapes and rebuilding fitness routines",
         "Contemporary fiction and cybersecurity literature"
