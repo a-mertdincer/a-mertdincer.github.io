@@ -4,12 +4,8 @@
   "ogDescription": "Systems Engineer · DevOps / SRE · Full-Stack (Next.js) · Cybersecurity Engineer.",
   "location": "Ankara, Türkiye",
   "email": "a.mertdincr@gmail.com",
-  "phone": "+90 543 382 38 08",
+  "phone": "",
   "links": [
-    {
-      "label": "a-mertdincer.github.io",
-      "url": "https://a-mertdincer.github.io"
-    },
     {
       "label": "github.com/a-mertdincer",
       "url": "https://github.com/a-mertdincer"
@@ -57,16 +53,6 @@
             "Authored incident analysis reports translating technical findings into actionable intelligence for technical and non-technical stakeholders.",
             "Prioritized alerts, logs, and security events by impact; identified root causes and contributed to faster response cycles.",
             "Proposed and contributed to SOC process improvements that strengthened detection coverage."
-          ]
-        },
-        {
-          "title": "Intern, .NET MVC Developer",
-          "org": "Agartha Technology",
-          "date": "Sep 2022 – Oct 2022",
-          "meta": "Ankara, Türkiye · On-site · Internship",
-          "bullets": [
-            "Built blog and contacts web applications with ASP.NET MVC and Entity Framework.",
-            "Collaborated on design, testing, and deployment cycles."
           ]
         },
         {
