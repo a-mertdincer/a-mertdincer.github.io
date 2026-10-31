@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- This page holds a GitHub token: only same-origin code runs, and it only talks to GitHub. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.github.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'" />
+    <title>CV Admin</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="icon" type="image/x-icon" href="../img/fav-icon.png" />
+  </head>
+  <body data-pane="edit">
+    <section id="login" class="login" hidden>
+      <h1>CV Admin</h1>
+      <p>Değişiklikler GitHub reposuna yazıldığı için giriş GitHub token'ı ile yapılır. Token sadece bu tarayıcıda kalır.</p>
+      <ol>
+        <li><a href="https://github.com/settings/personal-access-tokens/new?name=cv-admin&amp;description=CV%20admin%20paneli&amp;expires_in=365&amp;contents=write" target="_blank" rel="noopener noreferrer">Bu bağlantıyla token oluştur</a></li>
+        <li><b>Repository access</b> altında <b>Only select repositories</b> seçip <code>a-mertdincer.github.io</code> reposunu ekle</li>
+        <li><b>Contents</b> izninin <b>Read and write</b> olduğunu kontrol et, token'ı oluşturup kopyala</li>
+      </ol>
+      <div id="login-form" class="login-form">
+        <input id="token" type="password" placeholder="github_pat_..." autocomplete="off" spellcheck="false" aria-label="GitHub token" />
+        <label class="check"><input id="remember" type="checkbox" /> Bu cihazda hatırla</label>
+        <button id="login-btn" class="primary" type="button">Giriş yap</button>
+      </div>
+      <p id="login-error" class="error" role="alert"></p>
+    </section>
+
+    <div id="app" hidden>
+      <header class="toolbar">
+        <strong class="brand">CV Admin</strong>
+        <span id="status" class="status" role="status"></span>
+        <span class="spacer"></span>
+        <button id="pane-btn" class="narrow-only" type="button">Önizleme</button>
+        <button id="reset-btn" type="button">Değişiklikleri at</button>
+        <button id="pdf-btn" type="button">PDF indir</button>
+        <button id="publish-btn" class="primary" type="button">Yayınla</button>
+        <button id="logout-btn" type="button">Çıkış</button>
+      </header>
+      <div class="panes">
+        <main id="editor" class="pane-edit"></main>
+        <aside class="pane-preview">
+          <iframe id="preview" title="CV önizleme" sandbox="allow-same-origin"></iframe>
+        </aside>
+      </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

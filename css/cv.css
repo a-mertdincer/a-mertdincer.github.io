@@ -185,13 +185,6 @@ body.cv::before {
 .cv-target strong {
   color: var(--fg);
 }
-.cv-confirm {
-  color: var(--muted);
-  font-style: italic;
-  font-size: 12.5px;
-  margin: 4px 0 0;
-}
-
 .cv-body h2 {
   color: var(--fg);
   font-size: 17px;

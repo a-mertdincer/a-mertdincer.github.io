@@ -1,0 +1,164 @@
+{
+  "name": "Ahmet Mert Dinçer",
+  "metaDescription": "CV of Ahmet Mert Dinçer — Systems Engineer at SDT, working with OKD/KubeVirt, OpenShift, GitLab CI/CD, Prometheus/Grafana/Loki, and full-stack Next.js + Supabase. Background in SOC analysis (QRadar, Sentinel, CrowdStrike).",
+  "ogDescription": "Systems Engineer · DevOps / SRE · Full-Stack (Next.js) · Cybersecurity Engineer.",
+  "location": "Ankara, Türkiye",
+  "email": "a.mertdincr@gmail.com",
+  "phone": "+90 543 382 38 08",
+  "links": [
+    {
+      "label": "a-mertdincer.github.io",
+      "url": "https://a-mertdincer.github.io"
+    },
+    {
+      "label": "github.com/a-mertdincer",
+      "url": "https://github.com/a-mertdincer"
+    },
+    {
+      "label": "linkedin.com/in/a-mertdincer",
+      "url": "https://www.linkedin.com/in/a-mertdincer/"
+    }
+  ],
+  "targetRoles": "Systems Engineer / Platform Engineer · DevOps / SRE · Cloud & Kubernetes Engineer · Full-Stack Developer (Next.js) · Cybersecurity Engineer",
+  "sections": [
+    {
+      "type": "text",
+      "title": "Professional Summary",
+      "body": "Systems engineer at SDT with hands-on responsibility for an OKD/KubeVirt production cluster, end-to-end DevOps tooling (GitLab CI/CD, Nexus, SonarQube, ArgoCD, TeamCity, YouTrack), and a full observability stack (Prometheus federation, Grafana, Loki, Alloy, OpenTelemetry Collector). Background as a SOC analyst across IBM QRadar, Microsoft Sentinel, CrowdStrike Falcon, and Vectra EDR. Active full-stack developer (Next.js + Supabase) shipping side projects and freelance work. Comfortable from Linux/CoreOS internals up to TypeScript and from packet captures to React Server Components."
+    },
+    {
+      "type": "entries",
+      "title": "Experience",
+      "items": [
+        {
+          "title": "Systems Engineer",
+          "org": "SDT (Savunma Teknolojileri Mühendislik), GKTY / YİİB Team",
+          "date": "December 2025 – Present",
+          "meta": "Ankara, Türkiye · On-site · Full-Time",
+          "bullets": [
+            "Operate a 3-master OKD cluster with KubeVirt running 22 Xubuntu VMs in a dedicated namespace; bastion + HAProxy front-end and dedicated monitoring host (10.100.3.192).",
+            "Built and maintain the observability stack: Prometheus federation, Grafana dashboards (`gkty-okd-pods`, `gkty-okd-overview`, NOC dashboards), Loki, Alloy DaemonSet, OpenTelemetry Collector with bearer-token auth.",
+            "Run the DevOps toolchain end-to-end: GitLab CI/CD with non-root OKD runners (kaniko + privilege SCC, Maven settings via ConfigMap/Secret/PVC mounts), Nexus Docker registry connector, SonarQube CA-trust via init container, ArgoCD with KubeVirt CRD exclusions, TeamCity, YouTrack.",
+            "Identity & RBAC: LDAP identity provider on OAuth, AD domain (`gkty.sdt.local`) join via SSSD, RBAC/ClusterRoleBindings for ~18 users across 21 namespaces, kubeconfig distribution, group-based xrdp access (`tsusers`).",
+            "Networking: OVN pod-network IP pinning via annotations, NetworkAttachmentDefinitions for VM bridges (`br-vm-bridge`), Netplan/nmcli static IPs with src-pinned routes, NetworkPolicy isolation across env-groups, UFW fleet management scripts that pull IPs dynamically from the cluster.",
+            "Storage: TopoLVM CSI, CDI StorageProfile fixes, HCO DataVolume troubleshooting, IBM FlashSystem-backed volumes.",
+            "Resolved a 22-day YouTrack/Hub auth outage: traced to JVM heap exhaustion, set jvmoptions to 4 GB, switched to a Recreate deployment strategy, restored base-url consistency.",
+            "Onboarding automation for new users (kubeconfig + RBAC + xrdp + Nexus pull secrets + CA trust distribution)."
+          ]
+        },
+        {
+          "title": "Cyber Defence Center Analyst",
+          "org": "Cyberwise",
+          "date": "Feb 2024 – December 2025",
+          "meta": "Istanbul, Türkiye · Hybrid · Full-Time",
+          "bullets": [
+            "Monitored real-time alerts in IBM QRadar, Microsoft Sentinel, ArcSight, and CrowdStrike Falcon; triaged suspicious activity end-to-end.",
+            "Investigated endpoint threats and supported incident response with Vectra EDR and Microsoft Defender.",
+            "Authored incident analysis reports translating technical findings into actionable intelligence for technical and non-technical stakeholders.",
+            "Prioritized alerts, logs, and security events by impact; identified root causes and contributed to faster response cycles.",
+            "Proposed and contributed to SOC process improvements that strengthened detection coverage."
+          ]
+        },
+        {
+          "title": "Intern, .NET MVC Developer",
+          "org": "Agartha Technology",
+          "date": "Sep 2022 – Oct 2022",
+          "meta": "Ankara, Türkiye · On-site · Internship",
+          "bullets": [
+            "Built blog and contacts web applications with ASP.NET MVC and Entity Framework.",
+            "Collaborated on design, testing, and deployment cycles."
+          ]
+        },
+        {
+          "title": "Research Intern, React.js Web Developer",
+          "org": "TÜBİTAK STAR Project (Visseria)",
+          "date": "Dec 2021 – Jun 2022",
+          "meta": "Kayseri, Türkiye · Internship",
+          "bullets": [
+            "Built and maintained front-end components for an AI-powered event photography platform in React.js.",
+            "Iterated on usability and performance through repeated build–measure–learn cycles."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "entries",
+      "title": "Education",
+      "items": [
+        {
+          "title": "BSc, Computer Engineering",
+          "org": "Erciyes University",
+          "date": "Kayseri, Türkiye",
+          "meta": "",
+          "bullets": [
+            "GPA 3.09",
+            "Member, AI / IT & Security Club"
+          ]
+        },
+        {
+          "title": "Computer Science (Erasmus+ Exchange)",
+          "org": "Lublin University of Technology",
+          "date": "Lublin, Poland",
+          "meta": "",
+          "bullets": []
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Certifications",
+      "items": [
+        "**CompTIA Security+**",
+        "**INE — Certified Incident Responder (eCIR)**",
+        "**INE — Junior Penetration Tester (eJPT)**",
+        "**TryHackMe — Jr Penetration Tester (PT1)**",
+        "**INE — Certified Cloud Associate (ICCA)**",
+        "**Cisco — CCNA** (Intro to Networks; SRWE; ENOSA)",
+        "**Cisco — CyberOps Associate**",
+        "**Cisco — CCNA: Introduction to Cybersecurity**"
+      ]
+    },
+    {
+      "type": "lines",
+      "title": "Skills",
+      "items": [
+        "**Container & Orchestration:** OKD/OpenShift · KubeVirt · Kubernetes · Helm · ArgoCD · kustomize",
+        "**CI/CD & DevOps:** GitLab CI · TeamCity · Argo Workflows · kaniko · Nexus · SonarQube · YouTrack",
+        "**Observability:** Prometheus (federation) · Grafana · Loki · Alloy · OpenTelemetry Collector",
+        "**Identity & Access:** LDAP · SSSD · Active Directory · OpenShift OAuth · RBAC",
+        "**Networking:** OVN · Flannel · Calico · NetworkAttachmentDefinitions · Linux bridges · UFW · HAProxy · Netplan/nmcli",
+        "**Storage:** TopoLVM CSI · CDI/HCO DataVolumes · IBM FlashSystem (basic)",
+        "**Security Platforms:** IBM QRadar · Microsoft Sentinel · CrowdStrike Falcon · Vectra EDR · Microsoft Defender · ArcSight",
+        "**Web App Security:** Burp Suite · OWASP ZAP · sqlmap · Nikto · Postman · WhatWeb · Wappalyzer",
+        "**Mobile App Security:** jadx · MobSF · dex2jar · apktool · Drozer · Frida",
+        "**Network Security:** Nmap · Netcat · Wireshark · Metasploit · Hydra · Nessus",
+        "**Programming:** Python · TypeScript / JavaScript · Bash · Go (basic) · C# (basic)",
+        "**Frontend:** Next.js · React · Tailwind · App Router · next-intl",
+        "**Backend:** Supabase · PostgreSQL (with RLS) · Node.js · ASP.NET MVC · Entity Framework",
+        "**OS:** Linux (RHEL/CoreOS, Ubuntu/Xubuntu) · Windows Server (AD) · macOS",
+        "**Cloud:** AWS (basic) · Azure (basic)",
+        "**Tooling:** Git · GitHub · Docker · VS Code · draw.io"
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Languages",
+      "items": [
+        "**Turkish** — Native",
+        "**English** — C1"
+      ],
+      "cssClass": "cv-langs"
+    },
+    {
+      "type": "list",
+      "title": "Interests",
+      "items": [
+        "Reverse engineering and cyber puzzles",
+        "Game development and immersive level design (on hold while shipping Telos)",
+        "Music production and curated playlists",
+        "Walking urban landscapes and rebuilding fitness routines",
+        "Contemporary fiction and cybersecurity literature"
+      ]
+    }
+  ]
+}
