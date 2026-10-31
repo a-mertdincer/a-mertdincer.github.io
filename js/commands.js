@@ -1,4 +1,3 @@
-var blog = "https://lsociety.net"
 var twitter = "https://www.x.com/jamiroquaei/";
 var password = "d0tslash";
 var linkedin = "https://www.linkedin.com/in/a-mertdincer/";
@@ -44,7 +43,6 @@ secret = [
 
 projects = [
   "<br>",
-  'Our Blog Page           <a href="' + blog + '" target="_blank">LSociety' + '</a>',
   'System Automation       <span class="color2">Scripts (In Progress)</span>',
   'My Github Repos         <a href="' + github + '" target="_blank">github/a-mertdincer' + "</a>",
   "<br>"
@@ -146,7 +144,6 @@ help = [
   "🌐 <span class='color2'>Connect</span>",
   '<span class="command">  social</span>         Display social networks',
   '<span class="command">  email</span>          Send me an email',
-  '<span class="command">  blog</span>           Visit LSociety blog',
   "<br>",
   "💻 <span class='color2'>Projects</span>",
   '<span class="command">  projects</span>       View coding projects',

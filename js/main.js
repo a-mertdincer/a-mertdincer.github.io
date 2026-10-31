@@ -175,10 +175,6 @@ function commander(cmd) {
     case "whoami":
       loopLines(whoami, "color2 margin", 80);
       break;
-    case "blog":
-      addLine("Opening LSociety...", "color2", 80);
-      newTab(blog);
-      break;
     case "sudo":
       addLine("Oh no, you're not admin...", "color2", 80);
       setTimeout(function() {
